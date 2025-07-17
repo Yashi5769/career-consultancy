@@ -1,0 +1,203 @@
+INFO 2025-07-17 06:12:42,711 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:12:57,156 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:28:33,331 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:30:09,467 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/apps.py changed, reloading.
+INFO 2025-07-17 06:30:09,597 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:30:22,767 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:31:49,039 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:32:12,429 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:35:33,777 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:38:07,034 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:40:40,197 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/forms.py changed, reloading.
+INFO 2025-07-17 06:40:40,366 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:41:01,309 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:43:26,118 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:45:02,872 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:47:48,457 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/settings.py changed, reloading.
+INFO 2025-07-17 06:47:48,946 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:06:22,438 autoreload Watching for file changes with StatReloader
+ERROR 2025-07-17 07:06:45,762 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yashi/Desktop/career_consulting/career_consulting/career/views.py", line 39, in home
+    return render(request, 'home.html')
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'career_consulting.career.context_processors'
+ERROR 2025-07-17 07:06:45,765 basehttp "GET / HTTP/1.1" 500 145
+WARNING 2025-07-17 07:06:45,788 log Not Found: /favicon.ico
+WARNING 2025-07-17 07:06:45,788 basehttp "GET /favicon.ico HTTP/1.1" 404 179
+INFO 2025-07-17 07:07:56,323 autoreload Watching for file changes with StatReloader
+ERROR 2025-07-17 07:08:19,077 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yashi/Desktop/career_consulting/career_consulting/career/views.py", line 39, in home
+    return render(request, 'home.html')
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'career_consulting.career.context_processors'
+ERROR 2025-07-17 07:08:19,080 basehttp "GET / HTTP/1.1" 500 145
+INFO 2025-07-17 07:10:09,153 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:10:21,348 basehttp "GET / HTTP/1.1" 200 14417
+WARNING 2025-07-17 07:10:27,867 log Not Found: /skill_analysis.html
+WARNING 2025-07-17 07:10:27,868 basehttp "GET /skill_analysis.html HTTP/1.1" 404 179
+WARNING 2025-07-17 07:10:34,576 log Not Found: /resume_upload.html
+WARNING 2025-07-17 07:10:34,577 basehttp "GET /resume_upload.html HTTP/1.1" 404 179
+WARNING 2025-07-17 07:10:39,628 log Not Found: /resume_upload.html
+WARNING 2025-07-17 07:10:39,629 basehttp "GET /resume_upload.html HTTP/1.1" 404 179
+INFO 2025-07-17 07:12:16,196 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/urls.py changed, reloading.
+INFO 2025-07-17 07:12:16,740 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:12:30,885 basehttp "GET / HTTP/1.1" 200 14417
+WARNING 2025-07-17 07:12:34,883 log Not Found: /skill_analysis.html
+WARNING 2025-07-17 07:12:34,883 basehttp "GET /skill_analysis.html HTTP/1.1" 404 179
+WARNING 2025-07-17 07:12:40,498 log Not Found: /resume_upload.html
+WARNING 2025-07-17 07:12:40,498 basehttp "GET /resume_upload.html HTTP/1.1" 404 179
+INFO 2025-07-17 07:13:27,966 basehttp "GET / HTTP/1.1" 200 14417
+ERROR 2025-07-17 07:14:04,710 log Internal Server Error: /skill-analysis/
+Traceback (most recent call last):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/smartif.py", line 179, in translate_token
+    op = OPERATORS[token]
+KeyError: '"python,java,c++,javascript,sql,html,css,ruby,php,swift,kotlin,go,rust,typescript".split(\',\')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yashi/Desktop/career_consulting/career_consulting/career/views.py", line 131, in skill_analysis
+    return render(request, 'skill_analysis.html')
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 952, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 885, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/smartif.py", line 170, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/smartif.py", line 181, in translate_token
+    return self.create_var(token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 888, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '.split(',')' from '"python,java,c++,javascript,sql,html,css,ruby,php,swift,kotlin,go,rust,typescript".split(',')'
+ERROR 2025-07-17 07:14:04,715 basehttp "GET /skill-analysis/ HTTP/1.1" 500 145
+INFO 2025-07-17 07:20:22,862 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:20:35,350 basehttp "GET / HTTP/1.1" 200 14417
+WARNING 2025-07-17 07:20:38,080 log Not Found: /resume_upload.html
+WARNING 2025-07-17 07:20:38,081 basehttp "GET /resume_upload.html HTTP/1.1" 404 179
+INFO 2025-07-17 07:23:14,374 basehttp "GET / HTTP/1.1" 200 14417
+WARNING 2025-07-17 07:23:16,733 log Not Found: /skill_analysis.html
+WARNING 2025-07-17 07:23:16,734 basehttp "GET /skill_analysis.html HTTP/1.1" 404 179
+INFO 2025-07-17 07:25:58,431 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:26:07,712 basehttp "GET / HTTP/1.1" 200 14179
+INFO 2025-07-17 07:26:10,872 basehttp "GET /skill-analysis/ HTTP/1.1" 200 10386
+INFO 2025-07-17 07:26:21,273 basehttp "POST /skill-analysis/ HTTP/1.1" 200 20220
+INFO 2025-07-17 07:26:54,381 basehttp "POST /skill-analysis/ HTTP/1.1" 200 20220
+INFO 2025-07-17 07:27:03,407 basehttp "POST /skill-analysis/ HTTP/1.1" 200 18992
+INFO 2025-07-17 07:27:19,470 basehttp "POST /skill-analysis/ HTTP/1.1" 200 20220
+INFO 2025-07-17 07:27:52,264 basehttp "POST /skill-analysis/ HTTP/1.1" 200 26028
+INFO 2025-07-17 07:28:42,498 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/urls.py changed, reloading.
+INFO 2025-07-17 07:28:43,034 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:28:57,711 basehttp "POST /skill-analysis/ HTTP/1.1" 200 26028
+INFO 2025-07-17 07:29:29,922 basehttp "POST /skill-analysis/ HTTP/1.1" 200 20220
