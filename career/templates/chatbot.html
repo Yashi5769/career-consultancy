@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CareerGuide - Your AI Career Co-Pilot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .chat-container {
+            height: 65vh;
+            overflow-y: auto;
+            padding: 1rem;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* Space between bubbles */
+        }
+        
+        .chat-bubble {
+            max-width: 85%;
+            padding: 12px 18px;
+            border-radius: 20px;
+            position: relative;
+            word-wrap: break-word;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .chat-bubble.user {
+            background-color: #0d6efd;
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .chat-bubble.bot {
+            background-color: #e9ecef;
+            color: #212529;
+            margin-right: auto;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .chat-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .chat-container::-webkit-scrollbar-thumb {
+            background-color: #adb5bd;
+            border-radius: 3px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 5px;
+            /* Spacing from the message above */
+            margin-right: auto;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-primary fw-bold" href="#">CareerGuide</a>
+        </div>
+    </nav>
+
+    <header class="position-relative text-center py-5 overflow-hidden">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT0fB442GWf875uEDb-hSwbkvCuRCUjEDkSg&s'); background-size: cover; background-position: center; filter: blur(4px); opacity: 0.9;">
+        </div>
+        <div class="position-relative z-1">
+            <div class="container bg-white bg-opacity-75 p-4 rounded-3" style="max-width: 700px;">
+                <h1 class="display-4 text-primary">CareerGuide</h1>
+                <p class="lead text-secondary">Guidance. Insight. Clarity. One chat away.</p>
+                <a href="#" class="btn btn-outline-primary btn-lg mx-2">Share your Feedback</a>
+                <a href="#" class="btn btn-outline-primary btn-lg mx-2">Resume Parsing</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <div class="card shadow-sm">
+            <div class="card-header text-center bg-primary text-white">
+                <h4 class="mb-0">CareerBot</h4>
+                <p class="mb-0 small">Ask me about jobs, skills, or resume tips.</p>
+            </div>
+            <div class="card-body chat-container" id="chatBox">
+            </div>
+            <div class="card-footer bg-white">
+                <form id="chatForm" class="d-flex align-items-center">
+                    <input type="text" class="form-control border-0 shadow-none me-2" id="userInput" placeholder="Describe your skills or dream job..." required autocomplete="off">
+                    <button type="submit" class="btn btn-primary rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                        <i class="bi bi-send-fill"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- DOM Elements ---
+        const chatContainer = document.getElementById('chatBox');
+        const userInput = document.getElementById('userInput');
+        const chatForm = document.getElementById('chatForm');
+        const submitBtn = chatForm.querySelector('button[type="submit"]');
+
+        // --- Chatbot State ---
+        let conversationState = 'awaiting_skills';
+        let lastRecommendedJob = null;
+        let jobData = [];
+
+        // ========================================================================================
+        //  CORE LOGIC: TF-IDF and Recommendation Engine (JavaScript Version)
+        // ========================================================================================
+        const stopWords = new Set(['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']);
+
+        function preprocessText(text) {
+            return text.toLowerCase().replace(/[^\w\s]/g, '').split(/\s+/).filter(word => !stopWords.has(word) && word.length > 0);
+        }
+        let vocab = {},
+            idf = {},
+            tfidfMatrix = [],
+            docCount = 0;
+
+        function fit(documents) {
+            docCount = documents.length;
+            const docTermFreqs = [];
+            vocab = {};
+            documents.forEach(doc => {
+                const terms = preprocessText(doc);
+                const termFreq = {};
+                const termSet = new Set();
+                terms.forEach(term => {
+                    termFreq[term] = (termFreq[term] || 0) + 1;
+                    termSet.add(term);
+                });
+                docTermFreqs.push(termFreq);
+                termSet.forEach(term => {
+                    vocab[term] = (vocab[term] || 0) + 1;
+                });
+            });
+            const vocabSize = Object.keys(vocab).length;
+            idf = {};
+            for (const term in vocab) {
+                const docsWithTerm = vocab[term];
+                idf[term] = Math.log(docCount / (1 + docsWithTerm));
+            }
+            tfidfMatrix = docTermFreqs.map(termFreq => {
+                const vector = new Array(vocabSize).fill(0);
+                let i = 0;
+                for (const term in vocab) {
+                    if (termFreq[term]) {
+                        const tf = termFreq[term] / Object.keys(termFreq).length;
+                        vector[i] = tf * idf[term];
+                    }
+                    i++;
+                }
+                return vector;
+            });
+        }
+
+        function transform(document) {
+            const terms = preprocessText(document);
+            const termFreq = {};
+            terms.forEach(term => {
+                termFreq[term] = (termFreq[term] || 0) + 1;
+            });
+            const vocabSize = Object.keys(vocab).length;
+            const vector = new Array(vocabSize).fill(0);
+            let i = 0;
+            for (const term in vocab) {
+                if (termFreq[term]) {
+                    const tf = termFreq[term] / terms.length;
+                    vector[i] = tf * (idf[term] || 0);
+                }
+                i++;
+            }
+            return vector;
+        }
+
+        function cosineSimilarity(vecA, vecB) {
+            let dotProduct = 0,
+                normA = 0,
+                normB = 0;
+            for (let i = 0; i < vecA.length; i++) {
+                dotProduct += vecA[i] * vecB[i];
+                normA += vecA[i] * vecA[i];
+                normB += vecB[i] * vecB[i];
+            }
+            normA = Math.sqrt(normA);
+            normB = Math.sqrt(normB);
+            if (normA === 0 || normB === 0) return 0;
+            return dotProduct / (normA * normB);
+        }
+
+        function recommendJob(userSkills) {
+            const userTfidf = transform(userSkills);
+            let bestJobIndex = -1,
+                maxSimilarity = -1;
+            tfidfMatrix.forEach((jobTfidf, index) => {
+                const similarity = cosineSimilarity(userTfidf, jobTfidf);
+                if (similarity > maxSimilarity) {
+                    maxSimilarity = similarity;
+                    bestJobIndex = index;
+                }
+            });
+            if (maxSimilarity > 0.01) {
+                return jobData[bestJobIndex];
+            }
+            return null;
+        }
+
+        // ========================================================================================
+        //  Data Loading and Initialization
+        // ========================================================================================
+        async function loadAndProcessData() {
+            const csvData = `Job Title,Company,Location,Experience Level,Salary,Industry,Required Skills
+Data Scientist,Innovate Corp,San Francisco,Senior Level,150000.0,Technology,"Python, R, SQL, Machine Learning, Data Visualization"
+Software Engineer,Tech Solutions,New York,Mid Level,120000.0,Technology,"Java, Python, C++, AWS, Docker"
+Marketing Manager,Growth Inc.,London,Senior Level,95000.0,Marketing,"SEO, SEM, Content Marketing, Social Media Marketing"
+Graphic Designer,Creative Minds,Berlin,Entry Level,60000.0,Design,"Adobe Creative Suite, UI/UX, Typography"
+Financial Analyst,Money Matters,New York,Mid Level,110000.0,Finance,"Excel, Financial Modeling, SQL, Risk Analysis"
+Product Manager,Future Gadgets,San Francisco,Senior Level,160000.0,Technology,"Product Roadmap, Agile, User Research, JIRA"
+HR Specialist,People First,London,Mid Level,80000.0,Human Resources,"Recruiting, Onboarding, Employee Relations, HRIS"
+UX Researcher,User Insights,Berlin,Mid Level,90000.0,Design,"User Interviews, Usability Testing, Persona Creation, Figma"
+DevOps Engineer,Cloudways,New York,Senior Level,140000.0,Technology,"CI/CD, Kubernetes, Terraform, Jenkins, AWS"
+Content Strategist,Story Weavers,London,Mid Level,75000.0,Marketing,"Content Creation, SEO, Analytics, Copywriting"`;
+            const rows = csvData.trim().split('\n');
+            const headers = rows.shift().split(',');
+            jobData = rows.map(row => {
+                const values = row.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g).map(v => v.replace(/"/g, ''));
+                const entry = {};
+                headers.forEach((header, i) => {
+                    entry[header] = values[i] || '';
+                });
+                return entry;
+            });
+            jobData.forEach(job => {
+                job['Skills Corpus'] = (job['Required Skills'] || '').toLowerCase().replace(/,/g, ' ');
+            });
+            const documents = jobData.map(job => job['Skills Corpus']);
+            fit(documents);
+        }
+
+        // ========================================================================================
+        //  Hugging Face LLM API Integration
+        // ========================================================================================
+        async function callLLMAPI(prompt, loadingMessage) {
+            const loadingElement = addMessage('', 'bot', true);
+            loadingElement.innerHTML = `<div class="d-flex align-items-center"><div class="spinner-border spinner-border-sm me-2" role="status"><span class="visually-hidden">Loading...</span></div><span>${loadingMessage}</span></div>`;
+
+            const apiUrl = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2";
+            const apiKey = "Bearer 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"; // Your Hugging Face Token
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': apiKey
+                    },
+                    body: JSON.stringify({
+                        inputs: prompt
+                    })
+                });
+
+                if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
+
+                const result = await response.json();
+                let text = "Sorry, I couldn't get a response. Please try again.";
+                if (result && result.length > 0 && result[0].generated_text) {
+                    text = result[0].generated_text.replace(prompt, '').trim();
+                }
+                loadingElement.innerHTML = text.replace(/\n/g, '<br>');
+
+            } catch (error) {
+                console.error("LLM API Error:", error);
+                loadingElement.innerHTML = "An error occurred while contacting the AI. This model might be loading. Please try again in a moment.";
+            }
+        }
+
+        // ========================================================================================
+        //  Chat Interface Logic
+        // ========================================================================================
+        function addMessage(text, sender, isHtml = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-bubble', sender);
+            if (isHtml) {
+                messageDiv.innerHTML = text;
+            } else {
+                messageDiv.textContent = text;
+            }
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            return messageDiv;
+        }
+
+        function addLLMButtons() {
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('action-buttons');
+            buttonContainer.innerHTML = `<button id="interview-btn" class="btn btn-sm btn-outline-primary">Get Interview Questions</button><button id="day-in-life-btn" class="btn btn-sm btn-outline-secondary">Describe a Day in the Life</button>`;
+            chatContainer.appendChild(buttonContainer);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            document.getElementById('interview-btn').addEventListener('click', () => {
+                const prompt = `Generate 5 common interview questions for a "${lastRecommendedJob['Job Title']}" role. Include a mix of behavioral, technical, and situational questions. Format the output clearly.`;
+                callLLMAPI(prompt, 'Generating interview questions...');
+                buttonContainer.remove();
+            });
+            document.getElementById('day-in-life-btn').addEventListener('click', () => {
+                const prompt = `Describe a typical "day in the life" for a "${lastRecommendedJob['Job Title']}". Be creative and engaging, describing common tasks, challenges, and collaborations in a narrative format.`;
+                callLLMAPI(prompt, 'Imagining a day in the life...');
+                buttonContainer.remove();
+            });
+        }
+
+        function handleUserInput(event) {
+            event.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            userInput.value = '';
+            userInput.disabled = true;
+            submitBtn.disabled = true;
+
+            setTimeout(() => processBotResponse(text), 500);
+        }
+
+        function processBotResponse(userInputText) {
+            const lowerInput = userInputText.toLowerCase();
+
+            if (conversationState === 'awaiting_skills') {
+                const recommendedJob = recommendJob(userInputText);
+                if (recommendedJob) {
+                    lastRecommendedJob = recommendedJob;
+                    let response = `Based on your skills, I recommend this role:<br><br>` +
+                        `<strong>Job Title:</strong> ${recommendedJob['Job Title']}<br>` +
+                        `<strong>Company:</strong> ${recommendedJob['Company']}<br>` +
+                        `<strong>Required Skills:</strong> ${recommendedJob['Required Skills']}`;
+                    addMessage(response, 'bot', true);
+                    setTimeout(() => {
+                        addLLMButtons();
+                        setTimeout(() => {
+                            addMessage("Would you like me to find some online courses for this field? (yes/no)", 'bot');
+                            conversationState = 'awaiting_course_decision';
+                        }, 500);
+                    }, 800);
+                } else {
+                    addMessage("I'm sorry, I couldn't find a suitable job match. Could you try describing your skills differently?", 'bot');
+                }
+            } else if (conversationState === 'awaiting_course_decision') {
+                if (lowerInput.includes('yes')) {
+                    addMessage("Great! Here is a link to search for relevant courses on Coursera:", 'bot');
+                    const skillsQuery = encodeURIComponent(lastRecommendedJob['Skills Corpus']);
+                    const courseUrl = `https://www.coursera.org/search?query=${skillsQuery}`;
+                    addMessage(`<a href="${courseUrl}" target="_blank" class="text-primary">${courseUrl}</a>`, 'bot', true);
+                } else {
+                    addMessage("No problem.", 'bot');
+                }
+                setTimeout(() => {
+                    addMessage("What would you like to do next? You can ask more about this job, or search for a new one.", 'bot');
+                    conversationState = 'awaiting_restart';
+                }, 800);
+            } else if (conversationState === 'awaiting_restart') {
+                if (lowerInput.includes('new') || lowerInput.includes('another') || lowerInput.includes('search')) {
+                    addMessage("Of course. What other skills or interests do you have?", 'bot');
+                    conversationState = 'awaiting_skills';
+                } else if (lowerInput.includes('question') || lowerInput.includes('interview') || lowerInput.includes('day') || lowerInput.includes('more') || lowerInput.includes('this one')) {
+                    addMessage("Sure, here are the options for this role again.", 'bot');
+                    addLLMButtons();
+                } else {
+                    addMessage("Thank you for using CareerGuide. Best of luck with your career search!", 'bot');
+                    userInput.disabled = true;
+                    submitBtn.disabled = true;
+                    return;
+                }
+            }
+
+            userInput.disabled = false;
+            submitBtn.disabled = false;
+            userInput.focus();
+        }
+
+        // ========================================================================================
+        //  Event Listeners and Initialization
+        // ========================================================================================
+        chatForm.addEventListener('submit', handleUserInput);
+
+        window.onload = async() => {
+            await loadAndProcessData();
+            setTimeout(() => {
+                addMessage("Hello! I'm CareerGuide. Tell me about your skills, interests, or the type of job you're looking for, and I'll help you find the perfect match.", 'bot');
+                userInput.focus();
+            }, 500);
+        };
+    </script>
+</body>
+
+</html>

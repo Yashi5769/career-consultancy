@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Career Consultancy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+
+
+<body class="bg-light text-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-primary fw-bold" href="{% url 'career:home' %}">Pathwise</a>
+        </div>
+        </div>
+    </nav>
+
+    <header class="position-relative text-center py-5 overflow-hidden">
+        <div class="position-absolute top-0 start-0 w-100 h-100">
+            <div class="w-100 h-100" style=" 
+                height: 400px;
+                background-image: url('https://www.verywellmind.com/thmb/uUYgTWCH5CvEUR8LZUQWMMZ_t5s=/3754x0/filters:no_upscale():max_bytes(150000):strip_icc()/career-counseling-56a0f2ae5f9b58eba4b575ac.jpg');
+                background-size: cover;
+                background-position: center;
+                filter: blur(4px);
+                opacity: 0.8;">
+            </div>
+        </div>
+
+        <div class="position-relative z-1">
+            <div class="container bg-white bg-opacity-90 p-3 rounded-3" style="max-width: 700px;">
+                <h1 class="display-4 text-primary">Build Your Career</h1>
+                <p class="lead text-secondary">You don't have to be great to start, but you have to start to be great.</p>
+                <a href="{% url 'career:resume_upload' %}" class="btn btn-outline-primary btn-lg mx-2">Upload Resume</a>
+                <a href="{% url 'career:chatbot' %}" class="btn btn-outline-primary btn-lg mx-2">Ask Career Bot</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container py-5" id="about">
+        <h2 class="text-center text-primary mb-4">About Us</h2>
+        <p class="text-center lead text-muted mb-5">
+            <strong>Pathwise</strong> is your personal assistant for professional growth. Our intelligent tools analyze your resume using LLMs, identify skill gaps, and connect you with the most relevant opportunities — from jobs to upskilling courses.
+        </p>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-bullseye text-success fs-2 me-3"></i>
+                            <h5 class="card-title mb-0">Our Mission</h5>
+                        </div>
+                        <p class="card-text text-muted">
+                            To empower every learner and job-seeker with intelligent, personalized guidance that bridges the gap between skills and opportunities in the ever-evolving AI and tech landscape.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-eye text-primary fs-2 me-3"></i>
+                            <h5 class="card-title mb-0">Our Vision</h5>
+                        </div>
+                        <p class="card-text text-muted">
+                            To become the world's most trusted AI-powered career mentoring platform—where your resume is the starting point of a guided journey toward meaningful, future-ready roles in technology.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <h4 class="text-center text-warning mb-4">Success Stories</h4>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <p class="card-text">"I uploaded my resume and within seconds got a breakdown of my skills and best-fit roles. It felt like a personal coach who truly gets tech."</p>
+                        <footer class="blockquote-footer text-end">Aarav S., CS Student</footer>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <p class="card-text">"This platform helped me switch from a support role to an AI internship with a clear course roadmap."</p>
+                        <footer class="blockquote-footer text-end">Nikita D., Bengaluru</footer>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <p class="card-text">"The resume parser was on point. The recommendations and roadmap changed how I looked at my tech career."</p>
+                        <footer class="blockquote-footer text-end">Manav R., Delhi</footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="position-relative py-4 text-white">
+        <!-- Background image with overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark">
+            <div class="w-100 h-100" style="
+                background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+                background-size: cover;
+                background-position: center;
+                filter: blur(8px);
+                opacity: 0.7;">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="container position-relative z-2 py-3">
+            <h2 class="text-center mb-4 display-6 fw-bold">How It Works</h2>
+            <div class="row g-3">
+                <div class="col-md-3 d-flex">
+                    <div class="p-3 border border-light border-1 rounded bg-dark bg-opacity-75 w-100 d-flex flex-column justify-content-center hover-effect">
+                        <h4 class="text-white mb-2">1. Upload Resume</h4>
+                        <p class="text-light mb-0 small">Start by uploading your resume in PDF format.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 d-flex">
+                    <div class="p-3 border border-light border-1 rounded bg-dark bg-opacity-75 w-100 d-flex flex-column justify-content-center hover-effect">
+                        <h4 class="text-white mb-2">2. Analyze Profile</h4>
+                        <p class="text-light mb-0 small">We extract and analyze your skills, roles, and strengths.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 d-flex">
+                    <div class="p-3 border border-light border-1 rounded bg-dark bg-opacity-75 w-100 d-flex flex-column justify-content-center hover-effect">
+                        <h4 class="text-white mb-2">3. Get Suggestions</h4>
+                        <p class="text-light mb-0 small">Receive job & course suggestions tailored to your goals.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 d-flex">
+                    <div class="p-3 border border-light border-1 rounded bg-dark bg-opacity-75 w-100 d-flex flex-column justify-content-center hover-effect">
+                        <h4 class="text-white mb-2">4. Chat with AI</h4>
+                        <p class="text-light mb-0 small">Ask anything—from role fit to salary expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .hover-effect {
+                transition: all 0.3s ease;
+                min-height: 150px;
+                /* Reduced height */
+            }
+            
+            .hover-effect:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center text-primary mb-5">Knowledge Hub</h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">
+                                <i class="bi bi-file-earmark-person text-primary me-2"></i> Resume Writing Tips
+                            </h5>
+                            <p class="card-text text-secondary">
+                                How to write clean, effective, ATS-friendly resumes.
+                            </p>
+                            <span class="badge bg-light text-dark mb-3">Beginner</span>
+                            <a href="https://in.indeed.com/career-advice/resumes-cover-letters/10-resume-writing-tips" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">
+                                <i class="bi bi-lightbulb text-primary me-2"></i> Top Skills in 2025
+                            </h5>
+                            <p class="card-text text-secondary">
+                                Keep your skills future-proof with this trending list.
+                            </p>
+                            <span class="badge bg-light text-dark mb-3">Tech + Business</span>
+                            <a href="https://www.coursera.org/in/articles/high-income-skills" class="btn btn-outline-primary btn-sm mt-auto">Explore Skills</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">
+                                <i class="bi bi-journal-code text-primary me-2"></i> Free Courses
+                            </h5>
+                            <p class="card-text text-secondary">
+                                Top free online courses with certificates across domains.
+                            </p>
+                            <span class="badge bg-light text-dark mb-3">MOOCs</span>
+                            <a href="https://www.coursera.org/courses?query=free" class="btn btn-outline-primary btn-sm mt-auto">Browse Courses</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary text-white text-center py-5">
+        <h2 class="mb-3">Ready to Launch Your Career?</h2>
+        <p class="lead">Let our AI help you choose the smartest next step.</p>
+        <a href="resume_upload.html" class="btn btn-light btn-lg mt-3">Upload Your Resume</a>
+    </section>
+
+    <footer class="text-center py-4 bg-white border-top">
+        <div class="container">
+            <small class="text-muted">© 2025 Career Consulting AI | Built for Learners & Job Seekers</small><br>
+            <a href="#" class="text-decoration-none text-muted mx-2">Privacy</a> |
+            <a href="#" class="text-decoration-none text-muted mx-2">Terms</a> |
+            <a href="#" class="text-decoration-none text-muted mx-2">Contact</a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.getElementById("pageBody");
+            const isDark = !body.classList.contains("dark-mode");
+
+            if (isDark) {
+                body.classList.add("dark-mode");
+            } else {
+                body.classList.remove("dark-mode");
+            }
+            const darkModeBtn = document.querySelector("[onclick='toggleDarkMode()']");
+            darkModeBtn.textContent = isDark ? "☀️" : "🌙";
+
+            localStorage.setItem("darkMode", isDark);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedMode = localStorage.getItem("darkMode") === "true";
+            if (savedMode) {
+                document.getElementById("pageBody").classList.add("dark-mode");
+                const darkModeBtn = document.querySelector("[onclick='toggleDarkMode()']");
+                darkModeBtn.textContent = "☀️";
+            }
+        });
+    </script>
+</body>
+
+</html>

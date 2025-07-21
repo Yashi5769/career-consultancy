@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Upload Resume - Career Consulting AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+        .card-upload {
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1rem rgb(13 110 253 / 0.15);
+        }
+        /* Style for the results section */
+        
+        #resultsSection .badge {
+            font-size: 0.9em;
+            padding: 0.5em 0.9em;
+        }
+    </style>
+</head>
+
+<body class="bg-light text-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-primary fw-bold" href="{% url 'career:home' %}">Pathwise</a>
+        </div>
+    </nav>
+
+    <header class="position-relative text-center py-5 overflow-hidden">
+        <div class="position-absolute top-0 start-0 w-100 h-100">
+            <div class="w-100 h-100" style="
+            height: 400px;
+            background-image: url('https://info.daxtra.com/hubfs/Resume%20Parsing_Feature2_shutterstock_1863626803.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px);
+            opacity: 0.8;">
+            </div>
+        </div>
+
+        <div class="position-relative z-1">
+            <div class="container bg-white bg-opacity-90 p-3 rounded-3" style="max-width: 700px;">
+                <h1 class="display-4 text-primary">ParseAI</h1>
+                <p class="lead text-secondary">Get started by uploading your resume in PDF format for instant parsing.</p>
+                <a href="{% url 'career:feedback' %}" class="btn btn-outline-primary btn-lg mx-2">Share Feedback</a>
+                <a href="{% url 'career:chatbot' %}" class="btn btn-outline-primary btn-lg mx-2">Ask Career Bot</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mb-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card card-upload border-0 shadow-lg overflow-hidden">
+                    <div class="card-header bg-primary bg-gradient text-white py-4">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i class="bi bi-file-earmark-arrow-up-fill fs-1 me-3"></i>
+                            <div>
+                                <h2 class="mb-0 fw-bold">Resume Analysis</h2>
+                                <p class="mb-0 opacity-75">Get personalized career insights</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-4 p-md-5">
+                        <form id="uploadForm" method="post" enctype="multipart/form-data" novalidate>
+                            {% csrf_token %}
+                            <div class="drop-zone mb-4 p-5 text-center border-2 border-dashed rounded-3" id="dropZone">
+                                <input type="file" id="resumeFile" name="resume_file" class="d-none" accept="application/pdf" required>
+                                <div class="drop-zone-content">
+                                    <i class="bi bi-cloud-arrow-up text-primary fs-1 mb-3"></i>
+                                    <h5 class="fw-bold mb-2">Drag & drop your resume here</h5>
+                                    <p class="text-muted mb-3">or click to browse files</p>
+                                    <span class="btn btn-outline-primary px-4">Select File</span>
+                                    <p class="small text-muted mt-3">PDF format only • Max 5MB</p>
+                                </div>
+                                <div class="drop-zone-preview d-none" id="filePreview">
+                                    <i class="bi bi-file-earmark-pdf text-danger fs-1 mb-2"></i>
+                                    <p class="mb-1 fw-bold" id="fileName"></p>
+                                    <p class="small text-muted mb-2" id="fileSize"></p>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" id="removeFile">
+                                <i class="bi bi-trash"></i> Remove
+                            </button>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold py-3" id="submitBtn">
+                                <span class="submit-text"><i class="bi bi-magic me-2"></i> Analyze My Resume</span>
+                                <span class="spinner-border spinner-border-sm d-none" id="submitSpinner" role="status"></span>
+                            </button>
+                        </form>
+
+                        <div class="mt-4">
+                            <div class="alert alert-success d-flex align-items-center d-none" id="successMsg" role="alert">
+                                <i class="bi bi-check-circle-fill fs-4 me-3"></i>
+                                <div>
+                                    <h5 class="alert-heading mb-1">Analysis Complete!</h5>
+                                    <p class="mb-0">Your results are shown below.</p>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-danger d-flex align-items-center d-none" id="errorMsg" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
+                                <div>
+                                    <h5 class="alert-heading mb-1">Upload Failed</h5>
+                                    <p class="mb-0" id="errorText">There was an error. Please try again.</p>
+                                </div>
+                            </div>
+
+                            <div class="progress-container mt-3 d-none" id="progressContainer">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Uploading...</span>
+                                    <span id="uploadPercent">0%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" id="uploadProgress" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer bg-light py-3 text-center">
+                        <p class="small text-muted mb-0">
+                            <i class="bi bi-lock-fill me-1"></i> Your data is secure and will never be shared without permission
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="resultsSection" class="container mb-5 d-none">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success bg-gradient text-white">
+                        <h3 class="mb-0"><i class="bi bi-clipboard2-data-fill me-2"></i>Analysis Results</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h5 class="text-primary">Job Title</h5>
+                            <p class="card-text fs-5" id="resultJobTitle"></p>
+                        </div>
+                        <hr />
+                        <div class="mb-3">
+                            <h5 class="text-primary">Skills</h5>
+                            <div id="resultSkills"></div>
+                        </div>
+                        <hr />
+                        <div>
+                            <h5 class="text-primary">Experience Summary</h5>
+                            <p class="card-text text-muted" id="resultExperience" style="white-space: pre-wrap;"></p>
+                        </div>
+                        <div class="position-relative mt-4 mb-4">
+                            <div class="container bg-white bg-opacity-90 p-3 rounded-3 d-flex justify-content-center" style="max-width: 700px;">
+                                <a href="{% url 'career:skill_analysis' %}" class="btn btn-outline-primary btn-lg">Analyze your skills</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .drop-zone {
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
+        
+        .drop-zone:hover {
+            border-color: #0d6efd !important;
+            background-color: rgba(13, 110, 253, 0.03);
+        }
+        
+        .drop-zone.active {
+            border-color: #0d6efd !important;
+            background-color: rgba(13, 110, 253, 0.05);
+        }
+        
+        .card-upload {
+            transition: transform 0.3s ease;
+        }
+        
+        .card-upload:hover {
+            transform: translateY(-3px);
+        }
+        
+        .progress-container {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .progress-container.show {
+            opacity: 1;
+        }
+    </style>
+
+    <footer class="text-center py-4 bg-white border-top">
+        <div class="container">
+            <small class="text-muted">© 2025 Career Consulting AI | Built for Learners & Job Seekers</small><br />
+            <a href="#" class="text-decoration-none text-muted mx-2">Privacy</a> |
+            <a href="#" class="text-decoration-none text-muted mx-2">Terms</a> |
+            <a href="#" class="text-decoration-none text-muted mx-2">Contact</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropZone = document.getElementById('dropZone');
+            const fileInput = document.getElementById('resumeFile');
+            const filePreview = document.getElementById('filePreview');
+            const fileName = document.getElementById('fileName');
+            const fileSize = document.getElementById('fileSize');
+            const removeFile = document.getElementById('removeFile');
+            const uploadForm = document.getElementById('uploadForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitSpinner = document.getElementById('submitSpinner');
+            const submitText = document.querySelector('.submit-text');
+            const successMsg = document.getElementById('successMsg');
+            const errorMsg = document.getElementById('errorMsg');
+            const errorText = document.getElementById('errorText');
+            const progressContainer = document.getElementById('progressContainer');
+            const uploadProgress = document.getElementById('uploadProgress');
+            const uploadPercent = document.getElementById('uploadPercent');
+            const resultsSection = document.getElementById('resultsSection');
+
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => dropZone.addEventListener(eventName, e => {
+                e.preventDefault();
+                e.stopPropagation();
+            }));
+            ['dragenter', 'dragover'].forEach(eventName => dropZone.addEventListener(eventName, () => dropZone.classList.add('active')));
+            ['dragleave', 'drop'].forEach(eventName => dropZone.addEventListener(eventName, () => dropZone.classList.remove('active')));
+
+            dropZone.addEventListener('click', () => fileInput.click());
+            dropZone.addEventListener('drop', e => handleFiles(e.dataTransfer.files));
+            fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+            removeFile.addEventListener('click', e => {
+                e.stopPropagation();
+                resetFileInput();
+            });
+
+            function resetFileInput() {
+                fileInput.value = '';
+                dropZone.querySelector('.drop-zone-content').classList.remove('d-none');
+                filePreview.classList.add('d-none');
+                submitBtn.disabled = true;
+            }
+
+            function handleFiles(files) {
+                if (!files.length) return;
+                const file = files[0];
+                if (file.type !== 'application/pdf') {
+                    showClientError('Please upload a PDF file only.');
+                    return;
+                }
+                if (file.size > 5 * 1024 * 1024) {
+                    showClientError('File size exceeds 5MB limit.');
+                    return;
+                }
+                fileName.textContent = file.name;
+                fileSize.textContent = (bytes => {
+                    if (bytes === 0) return '0 Bytes';
+                    const k = 1024,
+                        i = Math.floor(Math.log(bytes) / Math.log(k));
+                    return `${parseFloat((bytes/Math.pow(k,i)).toFixed(1))} ${['Bytes','KB','MB'][i]}`;
+                })(file.size);
+                dropZone.querySelector('.drop-zone-content').classList.add('d-none');
+                filePreview.classList.remove('d-none');
+                submitBtn.disabled = false;
+            }
+
+            function showClientError(message) {
+                alert(message);
+                resetFileInput();
+            }
+
+            uploadForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (!fileInput.files.length) {
+                    showClientError('Please select a file to upload.');
+                    return;
+                }
+
+                // --- UI Setup for Upload ---
+                submitBtn.disabled = true;
+                submitText.classList.add('d-none');
+                submitSpinner.classList.remove('d-none');
+                progressContainer.classList.add('show');
+                successMsg.classList.add('d-none');
+                errorMsg.classList.add('d-none');
+                resultsSection.classList.add('d-none'); // Hide previous results
+
+                // --- Real Upload Logic ---
+                const formData = new FormData(uploadForm);
+                const xhr = new XMLHttpRequest();
+
+                xhr.open('POST', "{% url 'career:resume_upload' %}", true);
+                // Note: CSRF token is already in formData from {% csrf_token %}
+
+                xhr.upload.addEventListener('progress', function(e) {
+                    if (e.lengthComputable) {
+                        const percentComplete = Math.round((e.loaded / e.total) * 100);
+                        uploadProgress.style.width = `${percentComplete}%`;
+                        uploadPercent.textContent = `${percentComplete}%`;
+                    }
+                });
+
+                xhr.onload = function() {
+                    submitSpinner.classList.add('d-none');
+                    submitText.classList.remove('d-none');
+                    submitBtn.disabled = false;
+                    progressContainer.classList.remove('show');
+
+                    if (xhr.status === 200) {
+                        const data = JSON.parse(xhr.responseText);
+                        displayResults(data.parsed_data);
+                    } else {
+                        const errorData = JSON.parse(xhr.responseText);
+                        displayError(errorData.error || 'An unknown server error occurred.');
+                    }
+                };
+
+                xhr.onerror = function() {
+                    displayError('Network error. Could not connect to the server.');
+                    submitSpinner.classList.add('d-none');
+                    submitText.classList.remove('d-none');
+                    submitBtn.disabled = false;
+                };
+
+                xhr.send(formData);
+            });
+
+            function displayResults(data) {
+                successMsg.classList.remove('d-none');
+
+                document.getElementById('resultJobTitle').textContent = data.job_title || 'N/A';
+                document.getElementById('resultExperience').textContent = data.experience || 'N/A';
+
+                const skillsContainer = document.getElementById('resultSkills');
+                skillsContainer.innerHTML = ''; // Clear previous skills
+                if (data.skills && data.skills.length > 0) {
+                    data.skills.forEach(skill => {
+                        const skillBadge = document.createElement('span');
+                        skillBadge.className = 'badge bg-secondary me-2 mb-2';
+                        skillBadge.textContent = skill;
+                        skillsContainer.appendChild(skillBadge);
+                    });
+                } else {
+                    skillsContainer.textContent = 'No skills extracted.';
+                }
+                resultsSection.classList.remove('d-none');
+                window.scrollTo({
+                    top: resultsSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+
+            function displayError(message) {
+                errorText.textContent = message;
+                errorMsg.classList.remove('d-none');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
