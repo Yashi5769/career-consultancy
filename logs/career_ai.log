@@ -1,0 +1,629 @@
+INFO 2025-07-17 06:12:42,711 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:12:57,156 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:28:33,331 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:30:09,467 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/apps.py changed, reloading.
+INFO 2025-07-17 06:30:09,597 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:30:22,767 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:31:49,039 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:32:12,429 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:35:33,777 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:38:07,034 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:40:40,197 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/forms.py changed, reloading.
+INFO 2025-07-17 06:40:40,366 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:41:01,309 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:43:26,118 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:45:02,872 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 06:47:48,457 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/settings.py changed, reloading.
+INFO 2025-07-17 06:47:48,946 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:06:22,438 autoreload Watching for file changes with StatReloader
+ERROR 2025-07-17 07:06:45,762 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yashi/Desktop/career_consulting/career_consulting/career/views.py", line 39, in home
+    return render(request, 'home.html')
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'career_consulting.career.context_processors'
+ERROR 2025-07-17 07:06:45,765 basehttp "GET / HTTP/1.1" 500 145
+WARNING 2025-07-17 07:06:45,788 log Not Found: /favicon.ico
+WARNING 2025-07-17 07:06:45,788 basehttp "GET /favicon.ico HTTP/1.1" 404 179
+INFO 2025-07-17 07:07:56,323 autoreload Watching for file changes with StatReloader
+ERROR 2025-07-17 07:08:19,077 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yashi/Desktop/career_consulting/career_consulting/career/views.py", line 39, in home
+    return render(request, 'home.html')
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'career_consulting.career.context_processors'
+ERROR 2025-07-17 07:08:19,080 basehttp "GET / HTTP/1.1" 500 145
+INFO 2025-07-17 07:10:09,153 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:10:21,348 basehttp "GET / HTTP/1.1" 200 14417
+WARNING 2025-07-17 07:10:27,867 log Not Found: /skill_analysis.html
+WARNING 2025-07-17 07:10:27,868 basehttp "GET /skill_analysis.html HTTP/1.1" 404 179
+WARNING 2025-07-17 07:10:34,576 log Not Found: /resume_upload.html
+WARNING 2025-07-17 07:10:34,577 basehttp "GET /resume_upload.html HTTP/1.1" 404 179
+WARNING 2025-07-17 07:10:39,628 log Not Found: /resume_upload.html
+WARNING 2025-07-17 07:10:39,629 basehttp "GET /resume_upload.html HTTP/1.1" 404 179
+INFO 2025-07-17 07:12:16,196 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/urls.py changed, reloading.
+INFO 2025-07-17 07:12:16,740 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:12:30,885 basehttp "GET / HTTP/1.1" 200 14417
+WARNING 2025-07-17 07:12:34,883 log Not Found: /skill_analysis.html
+WARNING 2025-07-17 07:12:34,883 basehttp "GET /skill_analysis.html HTTP/1.1" 404 179
+WARNING 2025-07-17 07:12:40,498 log Not Found: /resume_upload.html
+WARNING 2025-07-17 07:12:40,498 basehttp "GET /resume_upload.html HTTP/1.1" 404 179
+INFO 2025-07-17 07:13:27,966 basehttp "GET / HTTP/1.1" 200 14417
+ERROR 2025-07-17 07:14:04,710 log Internal Server Error: /skill-analysis/
+Traceback (most recent call last):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/smartif.py", line 179, in translate_token
+    op = OPERATORS[token]
+KeyError: '"python,java,c++,javascript,sql,html,css,ruby,php,swift,kotlin,go,rust,typescript".split(\',\')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yashi/Desktop/career_consulting/career_consulting/career/views.py", line 131, in skill_analysis
+    return render(request, 'skill_analysis.html')
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 952, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 885, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/smartif.py", line 170, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/smartif.py", line 181, in translate_token
+    return self.create_var(token)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 888, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '.split(',')' from '"python,java,c++,javascript,sql,html,css,ruby,php,swift,kotlin,go,rust,typescript".split(',')'
+ERROR 2025-07-17 07:14:04,715 basehttp "GET /skill-analysis/ HTTP/1.1" 500 145
+INFO 2025-07-17 07:20:22,862 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:20:35,350 basehttp "GET / HTTP/1.1" 200 14417
+WARNING 2025-07-17 07:20:38,080 log Not Found: /resume_upload.html
+WARNING 2025-07-17 07:20:38,081 basehttp "GET /resume_upload.html HTTP/1.1" 404 179
+INFO 2025-07-17 07:23:14,374 basehttp "GET / HTTP/1.1" 200 14417
+WARNING 2025-07-17 07:23:16,733 log Not Found: /skill_analysis.html
+WARNING 2025-07-17 07:23:16,734 basehttp "GET /skill_analysis.html HTTP/1.1" 404 179
+INFO 2025-07-17 07:25:58,431 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:26:07,712 basehttp "GET / HTTP/1.1" 200 14179
+INFO 2025-07-17 07:26:10,872 basehttp "GET /skill-analysis/ HTTP/1.1" 200 10386
+INFO 2025-07-17 07:26:21,273 basehttp "POST /skill-analysis/ HTTP/1.1" 200 20220
+INFO 2025-07-17 07:26:54,381 basehttp "POST /skill-analysis/ HTTP/1.1" 200 20220
+INFO 2025-07-17 07:27:03,407 basehttp "POST /skill-analysis/ HTTP/1.1" 200 18992
+INFO 2025-07-17 07:27:19,470 basehttp "POST /skill-analysis/ HTTP/1.1" 200 20220
+INFO 2025-07-17 07:27:52,264 basehttp "POST /skill-analysis/ HTTP/1.1" 200 26028
+INFO 2025-07-17 07:28:42,498 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/urls.py changed, reloading.
+INFO 2025-07-17 07:28:43,034 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 07:28:57,711 basehttp "POST /skill-analysis/ HTTP/1.1" 200 26028
+INFO 2025-07-17 07:29:29,922 basehttp "POST /skill-analysis/ HTTP/1.1" 200 20220
+INFO 2025-07-17 09:42:50,501 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 09:43:03,544 basehttp "GET / HTTP/1.1" 200 14181
+INFO 2025-07-17 09:43:06,180 basehttp "GET /chatbot/ HTTP/1.1" 200 8368
+WARNING 2025-07-17 09:43:06,213 log Not Found: /chat
+WARNING 2025-07-17 09:43:06,213 basehttp "POST /chat HTTP/1.1" 404 179
+WARNING 2025-07-17 09:43:10,615 log Not Found: /chat
+WARNING 2025-07-17 09:43:10,616 basehttp "POST /chat HTTP/1.1" 404 179
+INFO 2025-07-17 09:56:09,283 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 09:56:09,901 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 09:57:06,741 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 10:00:26,932 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 10:01:23,164 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 10:01:23,644 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 10:01:35,062 basehttp "GET / HTTP/1.1" 200 14181
+WARNING 2025-07-17 10:01:37,103 log Not Found: /chatbot.html
+WARNING 2025-07-17 10:01:37,103 basehttp "GET /chatbot.html HTTP/1.1" 404 179
+INFO 2025-07-17 10:01:41,611 basehttp "GET /chatbot/ HTTP/1.1" 200 8368
+WARNING 2025-07-17 10:01:41,642 log Not Found: /chat
+WARNING 2025-07-17 10:01:41,642 basehttp "POST /chat HTTP/1.1" 404 179
+WARNING 2025-07-17 10:01:44,559 log Not Found: /chat
+WARNING 2025-07-17 10:01:44,560 basehttp "POST /chat HTTP/1.1" 404 179
+INFO 2025-07-17 10:04:31,249 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 10:04:47,317 basehttp "GET / HTTP/1.1" 200 14181
+INFO 2025-07-17 10:04:50,282 basehttp "GET /skill-analysis/ HTTP/1.1" 200 10386
+INFO 2025-07-17 10:05:02,859 basehttp "POST /skill-analysis/ HTTP/1.1" 200 20220
+INFO 2025-07-17 10:05:07,610 basehttp "GET /chatbot/ HTTP/1.1" 200 7819
+INFO 2025-07-17 10:05:07,645 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 10:05:27,051 basehttp "POST /chatbot/ HTTP/1.1" 200 2272
+INFO 2025-07-17 10:05:48,696 basehttp "POST /chatbot/ HTTP/1.1" 200 388
+INFO 2025-07-17 10:05:53,818 basehttp "GET /chatbot/ HTTP/1.1" 200 7819
+INFO 2025-07-17 10:05:53,834 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 10:06:01,225 basehttp "GET /skill-analysis/ HTTP/1.1" 200 10386
+INFO 2025-07-17 10:06:03,991 basehttp "GET /chatbot/ HTTP/1.1" 200 7819
+INFO 2025-07-17 10:06:04,017 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 10:10:18,311 basehttp "GET /chatbot/ HTTP/1.1" 200 8650
+INFO 2025-07-17 10:10:18,329 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 10:11:03,720 basehttp "GET /chatbot/ HTTP/1.1" 200 9021
+INFO 2025-07-17 10:11:03,739 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 10:11:09,315 basehttp "GET /skill-analysis/ HTTP/1.1" 200 10386
+INFO 2025-07-17 10:11:10,804 basehttp "GET /chatbot/ HTTP/1.1" 200 9021
+INFO 2025-07-17 10:11:10,831 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 10:12:31,643 basehttp "GET /chatbot/ HTTP/1.1" 200 8863
+INFO 2025-07-17 10:12:31,661 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 10:13:21,385 basehttp "GET /chatbot/ HTTP/1.1" 200 8868
+INFO 2025-07-17 10:13:21,400 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 10:13:39,767 basehttp "GET /chatbot/ HTTP/1.1" 200 8868
+INFO 2025-07-17 10:13:39,784 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 10:15:00,201 basehttp "POST /chatbot/ HTTP/1.1" 200 388
+INFO 2025-07-17 10:15:11,432 basehttp "POST /chatbot/ HTTP/1.1" 200 63
+INFO 2025-07-17 10:15:19,449 basehttp "POST /chatbot/ HTTP/1.1" 200 1343
+INFO 2025-07-17 10:38:21,540 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 10:38:33,282 basehttp "GET / HTTP/1.1" 200 14181
+WARNING 2025-07-17 10:38:34,770 log Not Found: /chatbot.html
+WARNING 2025-07-17 10:38:34,771 basehttp "GET /chatbot.html HTTP/1.1" 404 179
+INFO 2025-07-17 10:38:40,537 basehttp "GET /chatbot/ HTTP/1.1" 200 8876
+INFO 2025-07-17 10:38:40,576 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 11:59:54,963 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:06:55,493 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:21:03,104 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:21:26,835 basehttp "GET / HTTP/1.1" 200 14181
+INFO 2025-07-17 12:21:30,646 basehttp "GET /chatbot/ HTTP/1.1" 200 8876
+INFO 2025-07-17 12:21:30,687 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 12:21:34,596 basehttp "GET /resume-upload/ HTTP/1.1" 200 18461
+ERROR 2025-07-17 12:21:47,617 log Internal Server Error: /resume-upload/
+ERROR 2025-07-17 12:21:47,617 basehttp "POST /resume-upload/ HTTP/1.1" 500 193
+INFO 2025-07-17 12:22:26,358 basehttp "GET / HTTP/1.1" 200 14181
+INFO 2025-07-17 12:22:30,505 basehttp "GET /resume-upload/ HTTP/1.1" 200 18461
+ERROR 2025-07-17 12:22:40,953 log Internal Server Error: /resume-upload/
+ERROR 2025-07-17 12:22:40,956 basehttp "POST /resume-upload/ HTTP/1.1" 500 193
+INFO 2025-07-17 12:26:44,456 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 12:26:45,159 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:27:34,426 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:43:08,470 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:43:25,723 basehttp "GET / HTTP/1.1" 200 14181
+INFO 2025-07-17 12:43:29,673 basehttp "GET /resume-upload/ HTTP/1.1" 200 18461
+INFO 2025-07-17 12:43:44,787 basehttp "POST /resume-upload/ HTTP/1.1" 200 729
+INFO 2025-07-17 12:44:59,251 basehttp "GET /skill-analysis/ HTTP/1.1" 200 10386
+INFO 2025-07-17 12:45:00,929 basehttp "GET /resume-upload/ HTTP/1.1" 200 18461
+INFO 2025-07-17 12:45:01,737 basehttp "GET /skill-analysis/ HTTP/1.1" 200 10386
+INFO 2025-07-17 12:45:53,676 basehttp "GET /skill-analysis/ HTTP/1.1" 200 10358
+INFO 2025-07-17 12:53:31,056 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:53:46,171 basehttp "GET / HTTP/1.1" 200 13300
+INFO 2025-07-17 12:56:11,380 basehttp "GET / HTTP/1.1" 200 13294
+INFO 2025-07-17 12:56:12,846 basehttp "GET /resume-upload/ HTTP/1.1" 200 17575
+INFO 2025-07-17 12:56:17,128 basehttp "GET /chatbot/ HTTP/1.1" 200 7982
+INFO 2025-07-17 12:56:17,159 basehttp "POST /chatbot/ HTTP/1.1" 200 386
+INFO 2025-07-17 12:57:53,221 basehttp "GET / HTTP/1.1" 200 13294
+INFO 2025-07-17 12:57:58,678 basehttp "GET /chatbot/ HTTP/1.1" 200 8004
+WARNING 2025-07-17 12:58:01,648 log Not Found: /feedback/ class=
+WARNING 2025-07-17 12:58:01,649 basehttp "GET /feedback/%20class= HTTP/1.1" 404 179
+INFO 2025-07-17 12:58:05,313 basehttp "GET /resume-upload/ HTTP/1.1" 200 17575
+INFO 2025-07-17 12:58:33,351 basehttp "GET / HTTP/1.1" 200 13294
+INFO 2025-07-17 12:58:35,102 basehttp "GET /chatbot/ HTTP/1.1" 200 8004
+INFO 2025-07-17 12:58:38,771 basehttp "GET /resume-upload/ HTTP/1.1" 200 17575
+WARNING 2025-07-17 12:58:42,394 log Not Found: /resume-upload/chatbot.html
+WARNING 2025-07-17 12:58:42,395 basehttp "GET /resume-upload/chatbot.html HTTP/1.1" 404 179
+INFO 2025-07-17 12:59:19,117 basehttp "GET / HTTP/1.1" 200 13294
+INFO 2025-07-17 12:59:21,780 basehttp "GET /chatbot/ HTTP/1.1" 200 8012
+INFO 2025-07-17 12:59:45,651 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 12:59:53,467 basehttp "GET /chatbot/ HTTP/1.1" 200 8012
+INFO 2025-07-17 13:03:55,522 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 13:03:57,207 basehttp "GET /chatbot/ HTTP/1.1" 200 8012
+INFO 2025-07-17 13:03:58,154 basehttp "GET /resume-upload/ HTTP/1.1" 200 17577
+INFO 2025-07-17 13:03:59,026 basehttp "GET /feedback/ HTTP/1.1" 200 20565
+INFO 2025-07-17 13:03:59,805 basehttp "GET /resume-upload/ HTTP/1.1" 200 17577
+INFO 2025-07-17 13:04:00,619 basehttp "GET /chatbot/ HTTP/1.1" 200 8012
+INFO 2025-07-17 13:04:01,377 basehttp "GET /feedback/ HTTP/1.1" 200 20565
+INFO 2025-07-17 13:04:02,132 basehttp "GET /chatbot/ HTTP/1.1" 200 8012
+INFO 2025-07-17 13:04:03,291 basehttp "GET /resume-upload/ HTTP/1.1" 200 17577
+INFO 2025-07-17 13:04:04,326 basehttp "GET /feedback/ HTTP/1.1" 200 20565
+INFO 2025-07-17 13:04:06,049 basehttp "GET /resume-upload/ HTTP/1.1" 200 17577
+INFO 2025-07-17 13:14:22,234 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 13:14:34,435 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 13:14:41,001 basehttp "GET /resume-upload/ HTTP/1.1" 200 17971
+INFO 2025-07-17 13:14:42,879 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9492
+INFO 2025-07-17 13:22:29,441 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 13:23:28,207 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 13:23:33,297 basehttp "GET /resume-upload/ HTTP/1.1" 200 17971
+INFO 2025-07-17 13:23:48,795 basehttp "POST /resume-upload/ HTTP/1.1" 200 732
+ERROR 2025-07-17 13:23:52,776 log Internal Server Error: /skill-analysis/
+Traceback (most recent call last):
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yashi/Desktop/career_consulting/career_consulting/career/views.py", line 232, in skill_analysis
+    return render(request, 'skill_analysis.html', context)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/yashi/.pyenv/versions/3.8.17/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'resume_upload_page' not found. 'resume_upload_page' is not a valid view function or pattern name.
+ERROR 2025-07-17 13:23:52,781 basehttp "GET /skill-analysis/ HTTP/1.1" 500 145
+INFO 2025-07-17 13:37:07,663 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 13:37:18,542 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 13:37:25,648 basehttp "GET /resume-upload/ HTTP/1.1" 200 17971
+INFO 2025-07-17 13:37:27,475 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9492
+INFO 2025-07-17 13:37:45,946 basehttp "POST /resume-upload/ HTTP/1.1" 200 954
+INFO 2025-07-17 13:37:48,968 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9492
+INFO 2025-07-17 13:53:13,176 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 13:53:26,897 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 13:53:29,988 basehttp "GET /resume-upload/ HTTP/1.1" 200 17971
+INFO 2025-07-17 13:53:31,833 basehttp "GET /skill-analysis/ HTTP/1.1" 200 2777
+INFO 2025-07-17 13:53:45,339 basehttp "POST /resume-upload/ HTTP/1.1" 200 691
+INFO 2025-07-17 13:53:47,502 basehttp "GET /skill-analysis/ HTTP/1.1" 200 2777
+INFO 2025-07-17 13:53:50,210 basehttp "GET /resume-upload/ HTTP/1.1" 200 17971
+INFO 2025-07-17 13:54:01,652 basehttp "POST /resume-upload/ HTTP/1.1" 200 734
+INFO 2025-07-17 13:54:43,513 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 13:54:53,623 basehttp "POST /resume-upload/ HTTP/1.1" 200 772
+INFO 2025-07-17 13:54:55,683 basehttp "GET /skill-analysis/ HTTP/1.1" 200 2777
+INFO 2025-07-17 13:57:54,541 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 13:58:04,858 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 13:58:06,527 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 13:58:21,744 basehttp "POST /resume-upload/ HTTP/1.1" 200 713
+INFO 2025-07-17 13:58:24,076 basehttp "GET /skill-analysis/ HTTP/1.1" 200 2777
+INFO 2025-07-17 13:58:26,215 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:00:25,786 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:00:26,400 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:00:48,961 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:00:49,508 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:01:10,213 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:02:01,422 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:02:01,815 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:06:44,418 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:06:44,984 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:06:54,367 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 14:06:55,711 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:07:09,928 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:07:09,940 basehttp "GET /skill-analysis/ HTTP/1.1" 200 2777
+INFO 2025-07-17 14:07:20,535 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:07:20,546 basehttp "GET /skill-analysis/ HTTP/1.1" 200 2777
+INFO 2025-07-17 14:08:01,342 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:08:14,958 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:08:14,969 basehttp "GET /skill-analysis/ HTTP/1.1" 200 2777
+INFO 2025-07-17 14:08:15,951 basehttp "GET /skill-analysis/ HTTP/1.1" 200 2777
+INFO 2025-07-17 14:15:09,079 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:15:09,681 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:15:53,968 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:15:54,375 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:16:05,645 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 14:16:06,750 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:16:15,128 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:16:15,134 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:16:16,945 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:16:16,951 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:16:17,471 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:16:17,478 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:16:17,716 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:16:17,722 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:16:17,910 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:16:17,915 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:16:18,101 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:16:18,106 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:16:18,278 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:16:18,284 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:16:19,879 basehttp "GET /skill-analysis/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:16:19,889 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:16:25,182 basehttp "GET /skill-analysis/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:16:25,192 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:17:59,251 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:17:59,807 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:20:00,857 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:20:01,427 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:20:11,443 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 14:20:12,455 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:20:23,270 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:20:23,285 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6204
+INFO 2025-07-17 14:20:29,419 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:20:29,427 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6152
+INFO 2025-07-17 14:20:44,847 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:20:44,854 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6138
+INFO 2025-07-17 14:23:21,220 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:23:34,748 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 14:23:35,805 basehttp "GET /resume-upload/ HTTP/1.1" 200 18018
+INFO 2025-07-17 14:23:51,225 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:23:51,238 basehttp "GET /skill-analysis/ HTTP/1.1" 200 5956
+INFO 2025-07-17 14:23:53,173 basehttp "GET /skill-analysis/ HTTP/1.1" 200 5956
+INFO 2025-07-17 14:25:44,357 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:25:44,903 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:26:00,278 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 14:26:01,586 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:26:13,722 basehttp "POST /resume-upload/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:26:13,734 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6125
+INFO 2025-07-17 14:27:29,620 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:27:30,197 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:28:29,274 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-17 14:28:29,442 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:28:39,169 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 14:28:40,241 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+ERROR 2025-07-17 14:28:48,442 log Internal Server Error: /resume-upload/
+ERROR 2025-07-17 14:28:48,442 basehttp "POST /resume-upload/ HTTP/1.1" 500 193
+INFO 2025-07-17 14:30:32,497 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:30:44,349 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 14:30:45,568 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:30:59,200 basehttp "POST /resume-upload/ HTTP/1.1" 200 763
+INFO 2025-07-17 14:31:01,205 basehttp "GET /skill-analysis/ HTTP/1.1" 200 2777
+INFO 2025-07-17 14:31:35,050 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-17 14:31:36,231 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-17 14:31:45,849 basehttp "POST /resume-upload/ HTTP/1.1" 200 718
+INFO 2025-07-17 14:31:47,188 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 06:17:02,082 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 06:21:37,330 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 06:25:55,289 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 06:29:32,505 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 06:29:33,053 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 06:34:52,395 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 06:34:52,923 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 06:37:44,164 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 06:37:44,712 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 06:39:21,785 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 06:39:22,279 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 06:40:09,579 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 06:40:10,109 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 06:40:33,189 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 06:40:35,298 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 06:40:46,636 basehttp "POST /resume-upload/ HTTP/1.1" 200 712
+INFO 2025-07-20 06:40:48,252 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 06:40:57,536 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19341
+INFO 2025-07-20 06:43:28,856 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 06:43:31,020 basehttp "GET /job-recommender/ HTTP/1.1" 200 11680
+INFO 2025-07-20 06:43:48,397 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 06:43:51,252 basehttp "GET /job-recommender/ HTTP/1.1" 200 11680
+INFO 2025-07-20 06:44:10,821 basehttp "GET /job-recommender/ HTTP/1.1" 200 11680
+INFO 2025-07-20 06:48:51,220 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 06:48:54,363 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 06:49:10,664 basehttp "POST /resume-upload/ HTTP/1.1" 200 665
+INFO 2025-07-20 06:49:12,435 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 06:49:20,120 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 06:49:23,186 basehttp "GET /job-recommender/ HTTP/1.1" 200 23957
+INFO 2025-07-20 06:50:32,333 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 06:50:33,893 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 06:50:46,303 basehttp "POST /resume-upload/ HTTP/1.1" 200 690
+INFO 2025-07-20 06:50:47,504 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 06:50:54,424 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 06:50:57,493 basehttp "GET /job-recommender/ HTTP/1.1" 200 23957
+INFO 2025-07-20 06:51:01,625 basehttp "GET /job-recommender/ HTTP/1.1" 200 23957
+INFO 2025-07-20 06:52:05,342 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 06:52:06,816 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 06:52:15,782 basehttp "POST /resume-upload/ HTTP/1.1" 200 802
+INFO 2025-07-20 06:52:16,991 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 06:52:23,844 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 06:52:27,342 basehttp "GET /job-recommender/ HTTP/1.1" 200 18819
+INFO 2025-07-20 07:08:06,919 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 07:08:19,522 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 07:08:20,836 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 07:08:31,457 basehttp "POST /resume-upload/ HTTP/1.1" 200 734
+INFO 2025-07-20 07:08:32,735 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 07:08:38,813 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 07:08:42,681 basehttp "GET /job-recommender/ HTTP/1.1" 200 18819
+INFO 2025-07-20 07:15:31,791 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 07:15:34,289 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 07:15:35,817 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 07:15:48,123 basehttp "POST /resume-upload/ HTTP/1.1" 200 752
+INFO 2025-07-20 07:15:49,664 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 07:15:55,707 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 07:15:58,844 basehttp "GET /job-recommender/ HTTP/1.1" 200 17046
+WARNING 2025-07-20 07:16:47,278 log Forbidden (CSRF token missing.): /ask-question/
+WARNING 2025-07-20 07:16:47,278 basehttp "POST /ask-question/ HTTP/1.1" 403 1019
+WARNING 2025-07-20 07:16:54,893 log Forbidden (CSRF token missing.): /ask-question/
+WARNING 2025-07-20 07:16:54,894 basehttp "POST /ask-question/ HTTP/1.1" 403 1019
+WARNING 2025-07-20 07:16:55,990 log Forbidden (CSRF token missing.): /ask-question/
+WARNING 2025-07-20 07:16:55,991 basehttp "POST /ask-question/ HTTP/1.1" 403 1019
+WARNING 2025-07-20 07:16:56,662 log Forbidden (CSRF token missing.): /ask-question/
+WARNING 2025-07-20 07:16:56,662 basehttp "POST /ask-question/ HTTP/1.1" 403 1019
+WARNING 2025-07-20 07:16:56,982 log Forbidden (CSRF token missing.): /ask-question/
+WARNING 2025-07-20 07:16:56,983 basehttp "POST /ask-question/ HTTP/1.1" 403 1019
+WARNING 2025-07-20 07:16:57,242 log Forbidden (CSRF token missing.): /ask-question/
+WARNING 2025-07-20 07:16:57,243 basehttp "POST /ask-question/ HTTP/1.1" 403 1019
+INFO 2025-07-20 07:27:55,959 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 07:27:56,551 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 07:28:12,826 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 07:28:14,469 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 07:38:11,691 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 07:38:33,951 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 07:38:35,658 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 07:38:50,025 basehttp "POST /resume-upload/ HTTP/1.1" 200 672
+INFO 2025-07-20 07:38:51,493 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 07:38:57,358 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 07:39:03,102 basehttp "GET /job-recommender/ HTTP/1.1" 200 16920
+INFO 2025-07-20 07:59:44,412 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 07:59:55,053 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 07:59:56,507 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 08:00:07,699 basehttp "POST /resume-upload/ HTTP/1.1" 200 675
+INFO 2025-07-20 08:00:08,854 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 08:00:15,540 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 08:00:18,694 basehttp "GET /job-recommender/ HTTP/1.1" 200 25108
+WARNING 2025-07-20 08:00:58,922 log Not Found: /find_jobs
+WARNING 2025-07-20 08:00:58,922 basehttp "POST /find_jobs HTTP/1.1" 404 179
+WARNING 2025-07-20 08:01:00,733 log Not Found: /find_jobs
+WARNING 2025-07-20 08:01:00,734 basehttp "POST /find_jobs HTTP/1.1" 404 179
+WARNING 2025-07-20 08:01:01,006 log Not Found: /find_jobs
+WARNING 2025-07-20 08:01:01,007 basehttp "POST /find_jobs HTTP/1.1" 404 179
+INFO 2025-07-20 08:32:21,672 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 08:32:23,484 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 08:32:33,713 basehttp "POST /resume-upload/ HTTP/1.1" 200 665
+INFO 2025-07-20 08:32:34,970 basehttp "GET /skill-analysis/ HTTP/1.1" 200 9507
+INFO 2025-07-20 08:32:41,576 basehttp "POST /skill-analysis/ HTTP/1.1" 200 19710
+INFO 2025-07-20 08:32:44,080 basehttp "GET /job-recommender/ HTTP/1.1" 200 6800
+INFO 2025-07-20 09:10:00,270 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:10:11,130 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 09:10:12,234 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 09:10:22,354 basehttp "POST /resume-upload/ HTTP/1.1" 200 781
+INFO 2025-07-20 09:10:24,303 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6431
+INFO 2025-07-20 09:10:31,070 basehttp "POST /skill-analysis/ HTTP/1.1" 200 10479
+INFO 2025-07-20 09:13:56,068 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 09:13:56,823 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:14:08,079 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 09:14:08,243 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:14:45,129 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:15:23,821 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 09:15:24,069 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:15:59,797 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 09:16:00,394 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:16:11,989 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 09:16:13,068 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 09:16:24,018 basehttp "POST /resume-upload/ HTTP/1.1" 200 1120
+INFO 2025-07-20 09:16:25,254 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6431
+INFO 2025-07-20 09:16:32,070 basehttp "POST /skill-analysis/ HTTP/1.1" 200 10478
+INFO 2025-07-20 09:20:34,377 basehttp "POST /skill-analysis/ HTTP/1.1" 200 10514
+INFO 2025-07-20 09:20:40,151 basehttp "GET /job-recommender/ HTTP/1.1" 200 6800
+INFO 2025-07-20 09:23:02,818 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 09:23:03,452 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:23:13,601 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 09:23:14,902 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 09:23:26,363 basehttp "POST /resume-upload/ HTTP/1.1" 200 1088
+INFO 2025-07-20 09:23:27,804 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6451
+INFO 2025-07-20 09:23:38,532 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6451
+INFO 2025-07-20 09:23:45,313 basehttp "POST /skill-analysis/ HTTP/1.1" 200 10514
+INFO 2025-07-20 09:23:50,005 basehttp "GET /job-recommender/ HTTP/1.1" 200 6800
+INFO 2025-07-20 09:25:29,950 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 09:25:30,507 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:25:40,944 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 09:25:42,411 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 09:25:52,812 basehttp "POST /resume-upload/ HTTP/1.1" 200 705
+INFO 2025-07-20 09:25:55,449 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6451
+INFO 2025-07-20 09:26:02,179 basehttp "POST /skill-analysis/ HTTP/1.1" 200 10515
+INFO 2025-07-20 09:26:06,916 basehttp "GET /job-recommender/ HTTP/1.1" 200 6800
+INFO 2025-07-20 09:44:56,187 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:48:05,374 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 09:48:05,923 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:48:29,972 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 09:48:30,525 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:49:34,824 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/skill_analysis/analysis.py changed, reloading.
+INFO 2025-07-20 09:49:35,388 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:50:46,468 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:52:14,091 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:53:03,285 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:54:43,304 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/skill_analysis/analysis.py changed, reloading.
+INFO 2025-07-20 09:54:43,731 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:55:24,665 autoreload /Users/yashi/Desktop/career_consulting/career_consulting/career/views.py changed, reloading.
+INFO 2025-07-20 09:55:25,084 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 09:55:43,235 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 09:55:45,480 basehttp "GET /chatbot/ HTTP/1.1" 200 8012
+INFO 2025-07-20 09:57:14,591 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 09:57:16,278 basehttp "GET /chatbot/ HTTP/1.1" 200 22282
+INFO 2025-07-20 09:57:30,736 basehttp "GET /chatbot/ HTTP/1.1" 200 22282
+INFO 2025-07-20 10:05:40,112 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 10:05:49,787 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 10:05:51,488 basehttp "GET /chatbot/ HTTP/1.1" 200 22282
+INFO 2025-07-20 10:06:01,803 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 10:24:21,562 basehttp "GET / HTTP/1.1" 200 13302
+INFO 2025-07-20 10:25:06,035 basehttp "GET /resume-upload/ HTTP/1.1" 200 17992
+INFO 2025-07-20 10:25:17,015 basehttp "POST /resume-upload/ HTTP/1.1" 200 714
+INFO 2025-07-20 10:25:20,926 basehttp "GET /skill-analysis/ HTTP/1.1" 200 6451
+INFO 2025-07-20 10:25:28,045 basehttp "POST /skill-analysis/ HTTP/1.1" 200 10515
+INFO 2025-07-20 10:25:32,278 basehttp "GET /job-recommender/ HTTP/1.1" 200 6800
+INFO 2025-07-20 10:25:41,408 basehttp "GET /chatbot/ HTTP/1.1" 200 20526
+INFO 2025-07-20 10:25:58,616 basehttp "GET /job-recommender/ HTTP/1.1" 200 6800
